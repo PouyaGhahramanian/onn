@@ -143,7 +143,7 @@ class ONN(nn.Module):
         return pred_per_layer
 
     def validate_input_X(self, data):
-        if len(data.shape) != 2:
+        if data.shape[1] != self.features_size:
             raise Exception(
                 "Wrong dimension for this X data. It should have only two dimensions.")
 
